@@ -3,13 +3,16 @@ import React from "react";
 //while useSelector hook is used to ACCESS values over states
 import { useDispatch } from "react-redux";
 //import login action from user so that I can use this in dispatch
-import { login } from "../features/user";
+import { login, logout, initialStateValue } from "../features/user";
+//initialstatevalue is mine
 
 //this is the component where we want to ALTER the state
 
 const Login = () => {
   const dispatch = useDispatch();
-
+  console.log(dispatch(login));
+  //this is to get the initial state value
+  console.log(initialStateValue);
   return (
     <div>
       <button
@@ -25,6 +28,15 @@ const Login = () => {
         }}
       >
         Login
+      </button>
+
+      <button
+        onClick={() => {
+          //see the logout doesn't take a payload so it's empty
+          dispatch(logout());
+        }}
+      >
+        LOGOUT
       </button>
     </div>
   );

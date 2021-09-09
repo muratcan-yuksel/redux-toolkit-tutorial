@@ -7,10 +7,12 @@ import { Provider } from "react-redux";
 //importing from the user.js
 //you can call this userReducer anything you want
 import userReducer from "./features/user";
+import themeReducer from "./features/theme";
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
+    theme: themeReducer,
   },
 });
 

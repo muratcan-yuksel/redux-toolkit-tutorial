@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialStateValue = { name: "", age: 0, email: "" };
+export const initialStateValue = { name: "", age: 0, email: "" };
 
 export const userSlice = createSlice({
   //name of the state
@@ -29,7 +29,7 @@ export const userSlice = createSlice({
 });
 
 //let's export our actions so that we can use them in other components
-export const { login } = userSlice.actions;
+export const { login, logout } = userSlice.actions;
 
 //don't forget to import your reducer in this file in index.js (which contains your store)
 
